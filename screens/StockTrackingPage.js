@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { ScrollView, Text, View } from 'react-native';
 import { Line, Bar } from 'react-chartjs-2';
 import { 
   Typography, Paper, CircularProgress, Box, Container, Grid, Button,

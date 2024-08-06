@@ -7,6 +7,7 @@ import LoginPage from './screens/LoginPage';
 import SignupPage from './screens/SignupPage';
 import ProductTrackingPage from './screens/ProductTrackingPage';
 import StockTrackingPage from './screens/StockTrackingPage';
+import AdminDashboard from './screens/AdminDashboard';
 
 const Stack = createStackNavigator();
 
@@ -24,6 +25,7 @@ export default function App() {
         <Stack.Screen name="Signup" component={SignupPage} />
         <Stack.Screen name="ProductTracking" component={ProductTrackingPage} />
         <Stack.Screen name="StockTracking" component={StockTrackingPage} />
+        <Stack.Screen name="AdminDashboard" component={AdminDashboard} />
       </Stack.Navigator>
     </NavigationContainer>
   );
