@@ -1,20 +1,42 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+
+import StartPage from './screens/StartPage';
+import LoginPage from './screens/LoginPage';
+import SignupPage from './screens/SignupPage';
+import ProductTrackingPage from './screens/ProductTrackingPage';
+import StockTrackingPage from './screens/StockTrackingPage';
+
+const Stack = createStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator 
+        initialRouteName="Start"
+        screenOptions={{
+          headerShown: false
+        }}
+      >
+        <Stack.Screen name="Start" component={StartPage} />
+        <Stack.Screen name="Login" component={LoginPage} />
+        <Stack.Screen name="Signup" component={SignupPage} />
+        <Stack.Screen name="ProductTracking" component={ProductTrackingPage} />
+        <Stack.Screen name="StockTracking" component={StockTrackingPage} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+// function App() {
+//   return (
+//     <Router>
+//       <Switch>
+//         <Route path="/supply-chain" component={SupplyChainTracePage} />
+//         <Route path="/crypto" component={CryptoTrackingPage} />
+//         {/* Add other routes as needed */}
+//       </Switch>
+//     </Router>
+//   );
+// }
